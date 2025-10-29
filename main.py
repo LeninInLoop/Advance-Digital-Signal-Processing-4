@@ -205,8 +205,13 @@ class Plotter:
         ax.set_xlabel("Sample (m)")
 
     @staticmethod
-    def plot_data(original: np.ndarray, processed: np.ndarray,
-                  downsampled: np.ndarray, factor: int, save_path: str):
+    def plot_data(
+            original: np.ndarray,
+            processed: np.ndarray,
+            downsampled: np.ndarray,
+            factor: int,
+            save_path: str
+    ):
         """
         Creates a 4-panel figure showing the results of the
         filter-then-downsample operation and saves it.
@@ -255,10 +260,14 @@ class Plotter:
         ax.set_ylim((min_val - padding, max_val + padding))
 
     @staticmethod
-    def plot_comparison(y_inefficient: np.ndarray, y_efficient: np.ndarray,
-                        n_plot: int, save_path: str):
+    def plot_comparison(
+            y_inefficient: np.ndarray,
+            y_efficient: np.ndarray,
+            n_plot: int,
+            save_path: str
+    ):
         """
-        Creates a 3-panel figure comparing the output of the inefficient
+        Creates a 2-panel figure comparing the output of the inefficient
         and efficient polyphase methods and saves it.
         """
         fig, axes = plt.subplots(2, 1, figsize=(12, 8), sharex=True)
@@ -383,9 +392,14 @@ class Plotter:
 
     # --- NEW METHOD (FOR LATEST REQUEST) ---
     @staticmethod
-    def plot_polyphase_reconstruction(processed_data: np.ndarray, y_streams: list,
-                                      y_efficient: np.ndarray, M: int, n_plot: int,
-                                      save_path: str):
+    def plot_polyphase_reconstruction(
+            processed_data: np.ndarray,
+            y_streams: list,
+            y_efficient: np.ndarray,
+            M: int,
+            n_plot: int,
+            save_path: str
+    ):
         """
         Creates and saves a plot showing how the low-rate polyphase output
         streams (y_k[m]) sum together to form the final downsampled signal,
